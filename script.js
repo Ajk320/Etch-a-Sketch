@@ -18,7 +18,6 @@ function createGrid(size) {
 
     gridItems = document.getElementsByClassName('grid-item');
     Array.from(gridItems).forEach(gridItem => {
-        // gridItem.style.flexBasis = flexBasis;
         gridItem.addEventListener("mouseover", changeColor);
     });
 
@@ -35,11 +34,19 @@ const gridSizeButton = document.getElementById('gridSizePrompt');
 gridSizeButton.addEventListener("click", changeGridSize);
 
 function changeGridSize() {
-    let newGridSize = prompt("Enter the new grid size");
+    let newGridSize;
 
-    if (newGridSize && newGridSize > 0) {
-       
-        createGrid(newGridSize);
+    while(true){
+        newGridSize = prompt("Enter the new grid size");
+
+        if (newGridSize && newGridSize > 0 && newGridSize <= 100) {
+        
+            createGrid(newGridSize);
+            break;
+        }
+        else{
+            alert("Enter values between 0 and 101");
+        }
     }
 }
 

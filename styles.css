@@ -5,14 +5,17 @@ body{
 #gridContainer{
    display: flex;
    flex-wrap: wrap;
-   max-width: 515px;
+   /* max-width: 515px; */
    border: 5px solid black;
-   padding: 5px;
+   /* padding: 5px;
+   margin: 10px; */
+   
 }
 
 .grid-item{
+    display: inline-block;
     width: 30px;
     height: 30px;
-    border: 0.5px solid black;
+    border: 1px solid black;
     
 }
